@@ -7,7 +7,6 @@ const quotes = [
   "The one who couldn’t fully leave behind that curse",
   "hey would all bear witness to the bare flesh of the one who is free",
   "To the one who left it all behind and his overwhelming intensity!",
-  "Are you nah or you one who fully left with this tresure i summon nah i'd win",
 ];
 const letters = [
   "over",
@@ -62,8 +61,12 @@ if (localStoreageTime) {
 
 toggledBtn.addEventListener("click", () => {
   toggled = toggled ? false : true;
-  console.log(toggled);
-  resetGame();
+  if (toggled) {
+    resetGame();
+    currentWords.textContent = "*WORDS*";
+  } else {
+    resetGame();
+  }
 });
 
 startBtn.addEventListener("click", () => {
@@ -86,7 +89,7 @@ restartBtn.addEventListener("click", () => {
 });
 
 const resetGame = () => {
-  currentWords.textContent = "PLACEHOLDER";
+  currentWords.textContent = "*SENTENCES*";
   curreentTime.textContent = "TIME:";
   startTime = Date.now;
   words = [];
@@ -99,7 +102,7 @@ const resetGame = () => {
 function quoteGenarator(arr) {
   let appendWord = "";
   if (toggled) {
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < 12; i++) {
       let ranNum = Math.floor(Math.random() * letters.length);
       appendWord += `<span>${arr[ranNum]} </span>`;
       words.push(arr[ranNum]);

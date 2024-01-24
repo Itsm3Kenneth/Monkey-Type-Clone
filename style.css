@@ -18,10 +18,16 @@ h1{
 .spelling-words{
     color: #627d92;
     padding: 2em;
+    font-size: 1em;
 }
 
 .fastest-score{
     color: #FFB100;
+    font-size: 1em;
+}
+
+.time{
+    font-size: 1em;
 }
 
 .container{
